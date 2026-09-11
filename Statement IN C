@@ -22,3 +22,10 @@ if(*expression){
 for(<init>;<test>;<update>){
 
 }
+/* while loop*/
+while(<test>){
+  /*loop body*/
+}
+
+/* It is completely the same thing as for with empty<init> and <update>*/
+
