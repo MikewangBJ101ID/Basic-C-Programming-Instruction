@@ -1,0 +1,6 @@
+#include <stdio.h> # Notify the Compiler to use default value and function
+printf("  ");
+scanf("");
+
+
+# Both Printf and Scanf have return value
