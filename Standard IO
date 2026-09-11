@@ -1,11 +1,13 @@
 #include <stdio.h> # Notify the Compiler to use default value and standard C I/O function
 printf("  ");
 scanf("");
+scanf("%d", &A);
+/* get a decimal value and stored in memory Address A */
 
 /* format specifier*/
 /* %c(int or chat as ASCII Format), %d, %e, %f, %% */
 /* %u(unsigned int as decimal), %x, %X */
 
-
+/* if you pass more expressions than format specifiers, the last expressions are ignored*/
 
 # Both Printf and Scanf have return value
