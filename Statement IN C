@@ -17,3 +17,8 @@ if(*expression){
   
 }
 
+/*Statement can also be iterations*/
+/* if <test> is false, loop body stop and continue to the following program*/
+for(<init>;<test>;<update>){
+
+}
