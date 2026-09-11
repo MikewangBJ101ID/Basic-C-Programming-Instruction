@@ -1,0 +1,19 @@
+; /*Null statement*/
+A=B; /*simple statement*/
+
+{
+  radius=42;
+  C=2*1.1416*radius;
+  printf(" ");
+}
+/* Compound statement*/
+
+/* A program is a sequence of statement*/
+
+/* Also some execution statement(condition)*/
+if(*expression){
+  /*execute Then block*/
+} else{
+  
+}
+
