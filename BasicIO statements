@@ -1,0 +1,86 @@
+/* Basic I/O Statements   */
+
+
+if (<expression>) {
+    /* 真 (expression != 0) 执行 */
+} else {
+    /* 假 (expression == 0) 执行 */
+}
+
+if (x = 5) { ... }  /* 错误！x 被赋值为 5，表达式计算结果为 5 (非 0，永远为真) */
+if (x == 5) { ... } /* 正确！判断 x 是否等于 5 */
+if(5==x) { ... } /* 正确！判断 x 是否等于 5, yoda conditions */
+if(5=x) { ... } /* 错误！5 不能被赋值，编译器会报错, 使用yoda conditions 来避免此类错误 */
+
+
+for (<init>; <test>; <update>) {
+    /* loop body */
+}
+/* Basic Structure for Loops */
+/*Sequnce of how these three part wokred*/
+/*First: Initialization */
+/*Second: Test */
+/*Third: Update */
+
+/* while 语法 */
+int x=0;/* 初始化 */
+while (<test>) {
+    /* loop body */
+    x=x+1;/* 更新 */
+}
+
+/* 映射为 for 循环 (省略 init 和 update) */
+for (; <test>; ) {
+    /* loop body */
+}
+
+
+
+
+#include <stdio.h> /*Using Basic I/O Functions */
+
+printf("Hello World!\n"); /* printf() 函数用于输出格式化字符串到标准输出设备 (通常是屏幕) */
+
+
+%d /*有符号整数*/
+%u /*无符号整数*/
+%f /*浮点数*/
+%c/*ASCII字符*/
+%e /*科学计数法表示的浮点数*/
+%x /*十六进制整数*/
+%X /*十六进制整数 (大写)*/
+
+
+int A;
+scanf("%d", &A); /* &A 表示变量 A 的内存地址， scanf需要该地址来存储输入的值 */
+/*在使用 %d, %f 等数值格式符时，scanf 会自动忽略/跳过前导的空白字符（空格、Tab、换行符 \n）*/
+/*如果用户输入5 \n 42, scanf 会忽略 \n，将 5 存储到 A 中 ， 最终scanf结果仍5 42*/
+scanf("%d %d", &A, &B); /* scanf() 可以同时读取多个值，用户输入 5 42 \n, A=5, B=42 */
+
+/*scanf 和printf均有返回值，表示成功读取或输出的字符数*/
+/*scanf若读取失败或达到EOF， return value will=-1*/
+/*使用scanf来进行input validation*/
+int A, B;
+/* 期望成功匹配 2 个整数 */
+if (2 != scanf("%d%d", &A, &B)) {
+    printf("Bad input! Using default values.\n");
+    A = 42; B = 10; /* 设置默认值 */
+}
+
+printf("%d %f", 10.0, 17); /* false argument types */
+
+int A;
+scanf("%d", A); /* 未使用 &A */
+/*scanf 会将 A 当前的值误认为是一个内存指针，并尝试向该非法地址写入数据，这会导致程序发生 Segmentation Fault*/
+
+
+/*input buffer */
+int age;
+char gender;
+
+scanf("%d", &age);
+scanf("%c", &gender);
+/*because of input buffer issues, gender value will be affected and stored the value \n */
+/* TO FIX THIS, YOU CAN ADD A SPACE BEFORE %c  */
+scanf(" %c", &gender);
+/* Space before c indicates that scanf should skip any leading whitespace characters before reading the character */
